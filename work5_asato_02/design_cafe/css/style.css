@@ -1,0 +1,584 @@
+@charset "UTF-8";
+
+.header-contents{
+  display: flex;
+  align-items: center;
+  /* 55/1920=0.028 */
+  padding-left: 2.8%;
+  /* 142/1920=0.073 */
+  padding-right: 7.3%;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1{
+  width: 226px;
+}
+
+.header-nav ul{
+  display: flex;
+  gap: 80px;
+}
+
+.header-nav li{
+  color: white;
+  font-weight: bold;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+/* 6/24の授業で追加 */
+/* PC版の時はハンバーガーとその中のメニューを非表示にする */
+.hamburger,
+.header-nav-sp{
+  display: none;
+}
+
+/* SP版の時はheader-navは非表示にしてハンバーガーを表示させる */
+@media screen and (max-width: 1100px){
+  .header-nav{
+    display: none;
+  }
+  .hamburger{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 9999; /* 表示の一番上に表示させる（レイヤーの一番上みたいなイメージ） */
+  }
+  .hamburger span{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #FFFFFF;
+    top: 13px;
+    transition: .3s; /* ハンバーガーメニューを押したときにゆっくりと×になるようにするための記述*/
+  }
+
+  /* 擬似要素 ::before　spanの前にという意味*/
+  .hamburger span::before{
+    position: absolute;
+    content: ""; /* 擬似的に要素を作っているのでその中身を記述しないといけない */
+    width: 30px;
+    height: 2px;
+    background-color: #FFFFFF;
+    top: -10px; /* 基準となるspanの記事要素なのでspanで設定したものからどう動かすかを記述する */
+    transition: .3s; /* ハンバーガーメニューを押したときにゆっくりと×になるようにするための記述*/
+  }
+
+  /* 擬似要素 ::after　spanの後ろにという意味*/
+  .hamburger span::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #FFFFFF;
+    bottom: -10px; /* 基準となるspanの下に10px動かす */
+    transition: .3s; /* ハンバーガーメニューを押したときにゆっくりと×になるようにするための記述*/
+  }
+
+  /* ハンバーガーメニューの記述 */
+  /* openが付いたら */
+  /* ハンバーガーメニューの真ん中の線を消す */
+  .open span{
+    background-color: transparent;
+  }
+
+  /* ハンバーガーメニューの上下の線をクロスさせる */
+  .open span::before{
+    transform: rotate(45deg);
+    top: 0; /* ×の交点 */
+  }
+  .open span::after{
+  transform: rotate(-45deg);
+  bottom: 0;
+  }
+  /* 黒い背景を画面いっぱいに表示させる */
+  .header-nav-sp{
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* どの媒体で見ても高さを100にする */
+    background-color: #00000098;
+  }
+/* header-nav-spを真ん中に表示させる */
+  .header-nav-sp ul{
+  display: flex; /*justify-contentなどで中央配置に設定したいので一旦flexにする*/
+  flex-direction: column; /* 横並びを縦並びにする */
+  justify-content: center;
+  align-items: center; /* これだとulのもつ高さにしかならないので */
+  height: 100%; /* 親要素であるheader-nav-sp自体の高さの100％とする */
+  gap: 20px;
+  }
+
+  .header-nav-sp li{
+    color: #FFFFFF;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: bold;
+  }
+
+}
+
+/* 課題部分 */
+
+body{
+  max-width: 1920px;
+}
+
+main{
+  background-color: #E8D9BF;
+}
+
+.main-contents{
+  max-width: 1020px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.title_images{
+  text-align: center;
+}
+
+.title_images img{
+  width: auto;
+  height: 78px;
+}
+
+/* Main Text */
+#Maintext{
+  padding: 100px 0 ;
+  text-align: center;
+}
+
+#Maintext .sub_catchcopy{
+  font-size: 30px;
+}
+
+#Maintext .catchcopy{
+  font-size: 82px;
+  line-height: 1.17;
+  letter-spacing: 0.1em;
+  padding: 55px 0 40px 0;
+}
+
+#Maintext .text{
+  font-size: 23px;
+  line-height: 1.65;
+}
+
+#Maintext .text_spbr{
+  display: none;
+}
+
+/* 文字落ちしないよう調整 */
+@media screen and (max-width: 1100px){
+  #Maintext .sub_catchcopy{
+    font-size: 24px;
+  }
+  #Maintext .catchcopy{
+    font-size: 58px;
+  }
+  #Maintext .text{
+    font-size: 18px;
+    line-height: 1.65;
+  }
+}
+
+@media screen and (max-width: 767px){
+  #Maintext .sub_catchcopy{
+    font-size: 17px;
+  }
+  #Maintext .catchcopy{
+    font-size: 38px;
+    line-height: 1.16;
+    letter-spacing: 0.1em;
+    padding: 55px 0 40px 0;
+  }
+  #Maintext .text{
+    font-size: 16px;
+    line-height: 1.88;
+  }
+  #Maintext .text_spbr{
+    display: inline;
+  }
+}
+
+/* About us PC */
+#Aboutus_sp{
+  display: none;
+}
+
+#Aboutus{
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+#Aboutus .images{
+  border-radius: 0 0 82px 0;
+}
+
+.Aboutus_text img{
+  width: auto;
+  height: 78px;
+}
+
+.Aboutus_image{
+  width: 50%;
+}
+
+.Aboutus_text{
+  width: 50%;
+  margin: auto;
+  padding-left: 80px;
+}
+
+.Aboutus_text .catchcopy{
+  font-size: 44px;
+  line-height: 1.38;
+  margin: 50px 0 40px 0;
+}
+
+.Aboutus_text .text{
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+/* 文字落ちしないよう調整 */
+@media screen and (max-width: 1100px){
+  #Aboutus .catchcopy{
+    font-size: 42px;
+  }
+}
+
+/* About us SP */
+@media screen and (max-width: 767px){
+  #Aboutus{
+    display: none;
+  }
+
+  #Aboutus_sp{
+    padding-bottom: 50px;
+    display: block;
+  }
+/*修正：高さを45pxに変更*/
+  #Aboutus_sp .h2_image{
+    width: auto;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #Aboutus_sp .images{
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+  }
+
+  #Aboutus_sp .catchcopy{
+    font-size: 36px;
+    line-height: 1.25;
+    margin: 30px 20px;
+  }
+
+  #Aboutus_sp .text{
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0 20px 0 20px;
+  }
+}
+
+/* MENU */
+#Menu{
+  padding-bottom: 100px;
+}
+
+#Menu .title_images{
+  margin: auto;
+  padding-bottom: 45px;
+}
+
+.category{
+  display: flex;
+  gap: 50px
+}
+
+.category img{
+  margin-bottom: 40px;
+  border-radius: 0 42px 0 0;
+}
+
+.category h3{
+  font-size: 38px;
+  font-weight: normal;
+  margin-top: -50px;
+  color: #D30202;
+}
+
+.category p{
+  font-size: 17px;
+  line-height: 1.47;
+}
+
+@media screen and (max-width: 767px){
+  #Menu .title_images{
+    margin: auto;
+    padding-bottom: 20px;
+  }
+/*修正：高さを45pxに変更*/
+  #Menu .title_images img{
+    width: auto;
+    height: 45px;
+  }
+  
+  .category{
+    flex-direction: column;
+    /*修正：全体との合算で左右のpaddingが35pxなので全体についている10pxを引いたものを設定*/
+    padding: 0 25px;
+    gap: 50px
+  }
+  
+  .category img{
+    margin-bottom: 60px;
+    border-radius: 0 42px 0 0;
+  }
+  
+  .category h3{
+    font-size: 40px;
+    font-weight: normal;
+    margin: -80px 0 20px 10px;
+    color: #D30202;
+  }
+  
+  .category p{
+    font-size: 17px;
+    line-height: 1.47;
+  }
+}
+
+
+/* Gallery */
+#Gallery{
+  padding-bottom: 70px;
+}
+
+#Gallery .title_images{
+  padding-bottom: 20px;
+}
+
+.gallery_images{
+  display: flex;
+  justify-content: center;
+}
+
+.gallery_images_pc{
+  width: 20%;
+}
+/*修正：pictureタグのimageに対して設定し直し*/
+picture .gallery_images_pc{
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  /*修正：高さを45pxに変更*/
+  #Gallery .title_images img{
+    width: auto;
+    height: 45px;
+  }
+  .gallery_images_pc{
+    display: none;
+  }
+  /*修正：class名を追加でつけてimageを表示させた*/
+  .gallery_images_sp{
+    display: block;
+    width: 100%;
+  }
+  .gallery_images {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* Event */
+#Event{
+  padding-bottom: 70px;
+}
+
+#Event .title_images{
+  padding-bottom: 40px;
+}
+
+.box1{
+  padding: 40px 50px;
+  background: white;
+  border: solid 3.68px #4F260B;
+}
+
+.posts{
+  margin: auto;
+}
+
+.posts li{
+  display: flex;
+}
+
+.posts p{
+  font-size: 23px;
+  line-height: 1.95;
+  letter-spacing: 0.1em;
+}
+
+.posts_date{
+  width: 20%;
+  padding-right: 60px;
+}
+
+.posts_text{
+  text-decoration:underline;
+  width: 80%;
+}
+
+@media screen and (max-width: 767px) {
+  #Event {
+    padding: 30px 20px;
+  }
+  /*修正：高さを45pxに変更*/
+  #Event .title_images img{
+    width: auto;
+    height: 45px;
+  }
+  /*修正：ulについていたpaddingはなくしてbox1自体にpaddingを指定した*/
+  .box1{
+    padding: 20px 10px 15px 25px;
+  }
+  .posts li {
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+  /*修正：フォントサイズの指定を間違えてliにしてしまっていたのでpに指定し直した*/
+  .posts p{
+    font-size: 16px;
+  }
+  .posts_date {
+    text-align: left;
+  }
+  .posts_text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+/* Access */
+#Access .title_images{
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  #Access .title_images{
+    padding-bottom: 10px;
+  }
+  /*修正：高さを45pxに変更*/
+  #Access .title_images img{
+    width: auto;
+    height: 45px;
+  }
+  .map {
+    height: 190px;
+  }
+}
+
+/* GoogleMapをダークモードに変更 */
+
+.map {
+  width: 100%;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+	position: relative;
+	padding-top: 25%; /* = height ÷ width × 100 */
+}
+
+.map iframe {
+  width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/* Footer */
+
+footer{
+  padding: 80px 10px;
+  background-color: white;
+}
+
+footer p{
+  color: black;
+}
+
+footer section{
+  display: flex;
+  justify-content: center;
+}
+
+.footer_logo{
+  width: auto;
+  height: 50px;
+  padding-right: 70px;
+}
+
+.address p{
+  font-size: 20px;
+  line-height: 1.95;
+}
+
+.copyright{
+  font-size: 16px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer_info {
+    flex-direction: column;
+    padding: 40px 20px 30px 10px;
+  }
+  .footer_logo {
+    width: 70%;
+    height: auto;
+  }
+  .address {
+    padding: 30px 0 0 10px;
+  }
+  .address p {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+  .copyright{
+    padding-top: 0;
+  }
+}
+
+.pagetop{
+  width: 125px;
+  height: 125px;
+  position:fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .pagetop{
+    width: 100px;
+    height: 100px;
+  }
+}

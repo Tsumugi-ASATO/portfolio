@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デザインカフェ</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div class="header-contents">
+      <h1>
+        <a href="./index.html">
+          <img src="./images/design_cafe_logo_header@2x.png" alt="design cafe"/>
+        </a>
+      </h1>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#Aboutus">ABOUT US</a></li>
+          <li><a href="#Menu">MENU</a></li>
+          <li><a href="#Gallery">GALLERY</a></li>
+          <li><a href="#Event">EVENT</a></li>
+          <li><a href="#Access">ACCESS</a></li>
+        </ul>
+      </nav>
+    </div>
+<!-- SP版　ハンバーガーメニューを表示させるための記述 -->
+    <div class="hamburger">
+      <span></span>
+    </div>
+
+<!-- SP版　ハンバーガーメニュー内のための記述 -->
+    <nav class="header-nav-sp">
+      <ul>
+        <li><a href="#Aboutus_sp">ABOUT US</a></li>
+        <li><a href="#Menu">MENU</a></li>
+        <li><a href="#Gallery">GALLERY</a></li>
+        <li><a href="#Event">EVENT</a></li>
+        <li><a href="#Access">ACCESS</a></li>
+      </ul>
+    </nav>
+
+    <div class="mainvisual">
+      <picture>
+        <source srcset="./images/sp_main_vs@2x-100.jpg"
+        media=" (max-width:767px)">
+        <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子">
+      </picture>
+    </div>
+  </header>
+  <main>
+    <section id="Maintext" class="main-contents">
+      <p class="sub_catchcopy">Have a happy day From a cup of coffee.</p>
+      <p class="catchcopy">ハッピーに溢れる1日を<br>1杯のコーヒーから。</p>
+      <p class="text">毎日を丁寧に大切に過ごしたい。<br class="text_spbr">だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間と<br class="text_spbr">こだわりのコーヒーを提供したい。</p>
+    </section>
+
+    <section id="Aboutus" class="main-contents">
+      <div class="Aboutus_image"><img class="images" src="./images/pc_about-100.jpg" alt="こだわりのコーヒー"></div>
+      <div class="Aboutus_text">
+        <h2>
+          <img src="./images/about_us@2x.png" alt="about_us">
+        </h2>
+        <p class="catchcopy">私たちが提供する<br>こだわりのコーヒー</p>
+        <p class="text">サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。</p>
+      </div>
+    </section>
+
+    <section id="Aboutus_sp" class="sp_main-contents">
+      <h2>
+        <img class="h2_image" src="./images/about_us@2x.png" alt="about_us">
+      </h2>
+      <img class="images" src="./images/about_us@2x-100.jpg" alt="こだわりのコーヒー">
+      <p class="catchcopy">私たちが提供する<br>こだわりのコーヒー</p>
+      <p class="text">サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。</p>
+      </div>
+    </section>
+
+    <section id="Menu" class="main-contents">
+      <h2 class="title_images">
+        <img src="./images/menu@2x.png" alt="menu">
+      </h2>
+      <div class="category">
+        <div class="Drink">
+          <picture>
+            <source srcset="./images/drink_sp@2x-100.jpg"
+            media=" (max-width:767px)">
+            <img src="./images/pc_menu_drink-100.jpg" alt="ドリンクメニュー">
+          </picture>
+          <h3>Drink</h3>
+          <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+        </div>
+        <div class="Food">
+          <picture>
+            <source srcset="./images/food_sp@2x-100.jpg"
+            media=" (max-width:767px)">
+            <img src="./images/pc_menu_food-100.jpg" alt="フードメニュー">
+          </picture>
+          <h3>Food</h3>
+          <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+        </div>
+        <div class="Sweets">
+          <picture>
+            <source srcset="./images/cake_sp@2x-100.jpg"
+            media=" (max-width:767px)">
+            <img src="./images/pc_menu_sweets-100.jpg" alt="スイーツメニュー">
+          </picture>
+          <h3>Sweets</h3>
+          <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Gallery">
+      <h2 class="title_images">
+        <img src="./images/gallery@2x.png" alt="Gallery">
+      </h2>
+      <div class="gallery_images">
+        <picture>
+          <source srcset="./images/mobile_gallery-100.jpg"
+          media=" (max-width:767px)">
+          <img class="gallery_images_pc gallery_images_sp" src="./images/pc_gallary_01-100.jpg" alt="ギャラリー1">
+        </picture>
+        <img class="gallery_images_pc" src="./images/pc_gallary_02-100.jpg" alt="ギャラリー2">
+        <img class="gallery_images_pc" src="./images/pc_gallary_03-100.jpg" alt="ギャラリー3">
+        <img class="gallery_images_pc" src="./images/pc_gallary_04-100.jpg" alt="ギャラリー4">
+        <img class="gallery_images_pc" src="./images/pc_gallary_05-100.jpg" alt="ギャラリー5">
+      </div>
+    </section>
+
+    <section id="Event" class="main-contents">
+      <h2 class="title_images">
+        <img src="./images/event@2x.png" alt="Event">
+      </h2>
+      <div class="box1">
+        <ul class="posts">
+          <li>
+            <p class="posts_date">2020.06.23</p>
+            <p class="posts_text">
+              <a href="#">7月はイベント出店のため0/0お休みします</a>
+            </p>
+          </li>
+          <li>
+            <p class="posts_date">2020.03.15</p>
+            <p class="posts_text">
+              <a href="#">春の新商品新発売。話題のあのブランドとコラボ</a>
+            </p>
+          </li>
+          <li>
+            <p class="posts_date">2020.02.06</p>
+            <p class="posts_text">
+              <a href="#">コーヒーの日で30％OFFイベントを開催［3日間限定］</a>
+            </p>
+          </li>
+        </ul>
+    </div>
+    </section>
+
+    <section id="Access">
+      <h2 class="title_images">
+        <img src="./images/access@2x.png" alt="Access">
+      </h2>
+      <!-- GoogleMapは東京駅で作成 -->
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.8330579092326!2d139.764516!3d35.6811124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1718639035885!5m2!1sja!2sjp" width="1920" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section class="footer_info">
+      <img class="footer_logo" src="./images/design_cafe_logo_footer@2x.png" alt="デザインカフェ">
+      <div class="address">
+        <p>OPEN 18:00 / CLOSE 24:00
+        <br>〒150-0022
+        <br>東京都渋谷区東京南123デザインビルB1
+        <br>MAIL：info@designcafe.tokyo</p>
+      </div>
+    </section>
+    <p class="copyright">© 2021 DESIGN CAFE</p>
+    <a href="#header">
+      <img class="pagetop" src="./images/to_top@2x.png" alt="PAGETOP">
+    </a>
+  </footer>
+
+  <!-- ５回目の授業で追加 -->
+  <script>
+    $(function(){
+      $(".hamburger").click(function (){
+        $(".hamburger").toggleClass("open");
+        $(".header-nav-sp").fadeToggle();
+      });
+    });
+  </script>
+
+
+</body>
+</html>
